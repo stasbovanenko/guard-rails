@@ -23,6 +23,7 @@ module Guard
       :timeout => 30,
       :zeus_plan => 'server',
       :zeus => false,
+      :spring => true
     }
 
     def initialize(watchers = [], options = {})
@@ -33,7 +34,7 @@ module Guard
     end
 
     def start
-      UI.info "[Guard::Rails] will start #{options[:server] || "the default web server"} on port #{options[:port]} in #{options[:environment]}."
+      UI.info "[Guard::Rails] will start #{options[:server] || "the default web server"} on port #{options[:port]} in #{options[:environment]}. #{'Using Spring' if options[:spring]}"
       reload("start") if options[:start_on_start]
     end
 

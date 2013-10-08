@@ -37,6 +37,7 @@ module Guard
     def build_command
       command = build_cli_command if options[:CLI]
       command ||= build_zeus_command if options[:zeus]
+      command ||= build_spring_command if options[:spring]
       command ||= build_rails_command
       "sh -c 'cd \"#{@root}\" && #{command} &'"
     end
@@ -89,6 +90,10 @@ module Guard
       ]
 
       "zeus #{zeus_options.join(' ')} #{build_options}"
+    end
+
+    def build_spring_command
+      "spring #{build_rails_command}"
     end
 
     def build_rails_command
