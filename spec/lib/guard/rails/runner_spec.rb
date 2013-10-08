@@ -164,6 +164,19 @@ describe Guard::RailsRunner do
     end
   end
 
+  context "spring enabled" do
+    let(:options) { default_options.merge(:spring => true) }
+    it "should have spring in command" do
+      runner.build_command.should match(%r{spring})
+    end
+  end
+
+  context "spring disabled" do
+    it "should not have spring in command" do
+      runner.build_command.should_not match(%r{spring})
+    end
+  end
+
   describe '#environment' do
     it "defaults RAILS_ENV to development" do
       runner.environment["RAILS_ENV"].should == "development"

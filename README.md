@@ -43,6 +43,7 @@ Now I can automatically restart your Rails development server as your files chan
 * `:timeout` waits when restarting the Rails server, in seconds (**default `30`**).
 * `:zeus_plan` the [custom plan][zeus-custom-plan] in zeus, only works when `zeus` option is `true` (**default `server`**)
 * `:zeus` support [zeus][zeus] to boost rails init speed (**default `false`**).
+* `:spring` support [spring] to boot rails speed (**default `false`**).
 * `:CLI` construct the runner command as you will! Will omit all options above except `pid_file`! (**default `rails server --pid tmp/pids/[RAILS_ENV].pid`**)
 
 ## How-to
@@ -89,4 +90,5 @@ Guard-rails is under **[FOLLOW YOUR HEART PUBLIC LICENSE][FYHPL]** version 1.
 [guard]: https://github.com/guard/guard
 [zeus]: https://github.com/burke/zeus
 [zeus-custom-plan]: https://github.com/burke/zeus/blob/master/docs/ruby/modifying.md
+[spring]: https://github.com/jonleighton/spring
 [FYHPL]: http://ranmocy.info/piece/FYHPL.txt
